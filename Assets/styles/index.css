@@ -1,0 +1,27 @@
+@import url(./reset.css);
+@import url(./reset.css);
+
+
+:root {
+    --app-dark-bg: #1a1d28;
+    --app-red: #ff3c57;
+    --app-green: #33ab4e;
+    --app-purple: #833cff;
+    --app-orange: #ff833c;
+    --app-navy: #000080;
+    --app-blue: #3c57ff;
+    --app-blue-hover: #364ee6;
+    --app-dark-grey: #3a434d;
+    --app-light-grey: #6c7e90;
+}
+
+body {
+    background: url(../media/background-image.jpg) no-repeat center center fixed;
+    background-size: cover;
+    transition: all 0.25s ease-in-out;
+}
+
+.container {
+    width: min(100% - 30px, 1280px);
+    margin-inline: auto;
+}
