@@ -25,3 +25,15 @@ body {
     width: min(100% - 30px, 1280px);
     margin-inline: auto;
 }
+
+/* -------------------------------------------------------------------------------------------
+ */
+
+.content {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
