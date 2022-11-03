@@ -16,7 +16,7 @@
 }
 
 body {
-    background: url(../media/background-image.jpg) no-repeat center center fixed;
+    background: linear-gradient(to right, #ff3c57, #ff833c);
     background-size: cover;
     transition: all 0.25s ease-in-out;
 }
