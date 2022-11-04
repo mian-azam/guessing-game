@@ -17,44 +17,56 @@ const input = select('.input');
 const checkBtn = select('.check-btn');
 const feedback = select('.feedback-p');
 const restartBtn = select('.restart-btn');
+const correctPara = select('.correct-p');
 
 
 function valid(number) {
-    let input = number.trim();
-    if (input.length > 0 && !isNaN(input))
+    let givennumber = number.trim();
+    if (givennumber.length > 0 && !isNaN(givennumber))
         return true;
     return false;
 }
 
 function randomNumber() {
-    let randomNum = Math.floor(Math.random() * 100) + 1;
+    const randomNum = Math.floor(Math.random() * 100) + 1;
     return randomNum
 }
-randomNumber();
-let b = randomNumber();
 
-function checkingGuess() {
-    let a = input.value;
-    if (valid(a) && a == b) {
-        feedback.innerText = 'Congrats';
-    } else if (valid(a) && a < b) {
-        feedback.innerText = 'Try a larger number';
-    } else if (valid(a) && a > 100) {
-        feedback.innerText = 'Try a number b/w 1 and 100';
-    } else if (valid(a) && a > b) {
-        feedback.innerText = 'Try a smaller number';
+let random = randomNumber();
+
+let n = 4;
+function tries() {
+    if (n >= 1) {
+        triesPara.innerText = `Tries Left: ${n}`
     }
     else {
-        feedback.innerText = 'Enter a valid number';
+        triesPara.innerText = `Sory! Try agin. My number was : ${random} `;
+        input.value = '';
+        feedback.innerText = '';
     }
+    n--;
 }
 
-onEvent('click', checkBtn, () => {
-    checkingGuess();
+onEvent('click', checkBtn, function () {
+    let userInput = input.value;
+    console.log(random);
+    if (valid(userInput)) {
+        if (userInput == random) {
+            feedback.innerText = `Congrats`;
+        } else if (userInput < random) {
+            feedback.innerText = `Larger`;
+        } else if (userInput > random) {
+            feedback.innerText = `smaller`;
+        }
+    } else {
+        feedback.innerText = `enter a vlaid nmbr`;
+    }
+    tries();
 });
 
 onEvent('click', restartBtn, () => {
     input.value = '';
     feedback.innerText = '';
-    checkBtn.innerText = randomNumber();
+    triesPara.innerText = '';
+    randomNumber();
 });
