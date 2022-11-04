@@ -44,21 +44,24 @@ input[type="text"] {
     width: 280px;
     font-size: 30px;
     color: #fff;
-    margin-top: 10px;
+    margin: 10px 0;
     padding: 10px;
-    /* background-color: var(--app-dark-grey); */
+    background-color: #eb3eab;
+    border: 1px solid #c715b2;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 26px 30px -10px, rgba(0, 0, 0, 0.1) 0px 16px 10px -10px;
 
 }
 
 
 
 button {
-    width: 70px;
+    width: 80px;
     height: 50px;
     text-align: center;
-    background-color: var(--app-navy);
-    border: 1px solid var(--app-blue-hover);
-    border-radius: 4px;
+    background-color: #c71576;
+    border: 1px solid #c715b2;
+    border-radius: 6px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 26px 30px -10px, rgba(0, 0, 0, 0.1) 0px 16px 10px -10px;
     font-size: 25px;
     font-weight: 600;
@@ -69,5 +72,7 @@ button {
 }
 
 button:hover {
-    background-color: var(--app-blue-hover);
+    background-color: var(--app-green);
+    border: 1px solid var(--app-red);
+    transition: all 0.1s ease-in-out;
 }
