@@ -40,17 +40,17 @@ body {
 
 
 input[type="text"] {
-    height: 80px;
-    width: 280px;
-    font-size: 30px;
-    color: #fff;
+    height: 200px;
+    width: 200px;
+    text-align: center;
+    font-size: 60px;
+    color: #c71576;
     margin: 10px 0;
     padding: 10px;
-    background-color: #eb3eab;
+    background-color: #f2f4f6;
     border: 1px solid #c715b2;
-    border-radius: 6px;
+    border-radius: 50%;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 26px 30px -10px, rgba(0, 0, 0, 0.1) 0px 16px 10px -10px;
-
 }
 
 
