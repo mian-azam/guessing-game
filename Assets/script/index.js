@@ -26,16 +26,22 @@ function valid(number) {
     return false;
 }
 
-let mynumber = 49;
+function randomNumber() {
+    let randomNum = Math.floor(Math.random() * 100) + 1;
+    return randomNum
+}
+randomNumber();
+let b = randomNumber();
+
 function checkingGuess() {
-    let a = input.value
-    if (valid(a) && a == mynumber) {
+    let a = input.value;
+    if (valid(a) && a == b) {
         feedback.innerText = 'Congrats';
-    } else if (valid(a) && a < mynumber) {
+    } else if (valid(a) && a < b) {
         feedback.innerText = 'Try a larger number';
     } else if (valid(a) && a > 100) {
         feedback.innerText = 'Try a number b/w 1 and 100';
-    } else if (valid(a) && a > mynumber) {
+    } else if (valid(a) && a > b) {
         feedback.innerText = 'Try a smaller number';
     }
     else {
@@ -50,4 +56,5 @@ onEvent('click', checkBtn, () => {
 onEvent('click', restartBtn, () => {
     input.value = '';
     feedback.innerText = '';
+    checkBtn.innerText = randomNumber();
 });
