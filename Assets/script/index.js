@@ -12,4 +12,7 @@ function select(selector, parent = document) {
 
 // ----------------------------------------------------------------------------------------
 
-
+const triesPara = select('.tries-p');
+const input = select('.input');
+const checkBtn = select('.chech-btn');
+const feedback = select('.feedback-p');
