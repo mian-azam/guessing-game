@@ -17,7 +17,6 @@ const input = select('.input');
 const checkBtn = select('.check-btn');
 const feedback = select('.feedback-p');
 const restartBtn = select('.restart-btn');
-const correctPara = select('.correct-p');
 
 
 function valid(number) {
@@ -32,41 +31,46 @@ function randomNumber() {
     return randomNum
 }
 
+
 let random = randomNumber();
 
-let n = 4;
+onEvent('click', checkBtn, function () {
+    tries();
+    let userInput = input.value;
+    if (valid(userInput)) {
+        if (userInput == random) {
+            feedback.innerText = `Congratulations!`;
+            triesPara.innerText = 'Restart to Play Again.';
+        } else if (userInput < random) {
+            feedback.innerText = `Try your Luck with a larger number`;
+        } else if (userInput > random) {
+            feedback.innerText = `Try your Luck with a smaller number`;
+        }
+    } else {
+        feedback.innerText = `Please enter a valid number between 1 and zero`;
+    }
+
+});
+
+
+let n = 9;
+
 function tries() {
     if (n >= 1) {
         triesPara.innerText = `Tries Left: ${n}`
     }
     else {
-        triesPara.innerText = `Sory! Try agin. My number was : ${random} `;
+        triesPara.innerText = `Restart to try agin. Prevoius number was : ${random} `;
         input.value = '';
         feedback.innerText = '';
     }
     n--;
-}
+};
 
-onEvent('click', checkBtn, function () {
-    let userInput = input.value;
-    console.log(random);
-    if (valid(userInput)) {
-        if (userInput == random) {
-            feedback.innerText = `Congrats`;
-        } else if (userInput < random) {
-            feedback.innerText = `Larger`;
-        } else if (userInput > random) {
-            feedback.innerText = `smaller`;
-        }
-    } else {
-        feedback.innerText = `enter a vlaid nmbr`;
-    }
-    tries();
-});
 
-onEvent('click', restartBtn, () => {
+
+onEvent('click', restartBtn, function () {
+    window.location.reload();
     input.value = '';
-    feedback.innerText = '';
-    triesPara.innerText = '';
-    randomNumber();
 });
+
