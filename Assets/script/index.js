@@ -57,7 +57,7 @@ let n = 9;
 
 function tries() {
     if (n >= 1) {
-        triesPara.innerText = `Tries Left: ${n}`
+        triesPara.innerText = `Tries Left : \xa0\ ${n}`
     }
     else {
         triesPara.innerText = `Restart to try agin. Prevoius number was : ${random} `;

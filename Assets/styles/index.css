@@ -93,4 +93,6 @@ p {
 
 p+p {
     margin-top: 10px;
+    font-size: 30px;
+    color: var(--app-dark-grey);
 }
