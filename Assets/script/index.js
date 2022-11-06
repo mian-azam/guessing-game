@@ -17,6 +17,7 @@ const input = select('.input');
 const checkBtn = select('.check-btn');
 const feedback = select('.feedback-p');
 const restartBtn = select('.restart-btn');
+const heading = select('.heading');
 
 
 function valid(number) {
@@ -41,6 +42,7 @@ onEvent('click', checkBtn, function () {
         if (userInput == random) {
             feedback.innerText = `Restart to Play Again.`;
             triesPara.innerText = 'Congrulations! You dit it.';
+            heading.style.visibility = 'hidden';
         } else if (userInput < random) {
             feedback.innerText = `Try your Luck with a larger number`;
         } else if (userInput > random) {
