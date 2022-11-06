@@ -39,8 +39,8 @@ onEvent('click', checkBtn, function () {
     let userInput = input.value;
     if (valid(userInput)) {
         if (userInput == random) {
-            feedback.innerText = `Congratulations!`;
-            triesPara.innerText = 'Restart to Play Again.';
+            feedback.innerText = `Restart to Play Again.`;
+            triesPara.innerText = 'Congrulations! You dit it.';
         } else if (userInput < random) {
             feedback.innerText = `Try your Luck with a larger number`;
         } else if (userInput > random) {
@@ -60,7 +60,7 @@ function tries() {
         triesPara.innerText = `Tries Left : \xa0\ ${n}`
     }
     else {
-        triesPara.innerText = `Restart to try agin. Prevoius number was : ${random} `;
+        triesPara.innerText = `Restart to try agin. \n Prevoius number was : ${random} `;
         input.value = '';
         feedback.innerText = '';
     }
