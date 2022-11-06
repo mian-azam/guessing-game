@@ -16,7 +16,7 @@
 }
 
 body {
-    background: linear-gradient(to right, #ff3c57, #ff833c);
+    background: linear-gradient(to right, #b20e24, #ff9659);
     background-size: cover;
     transition: all 0.25s ease-in-out;
 }
@@ -73,7 +73,7 @@ button {
 }
 
 button:hover {
-    background-color: var(--app-green);
+    background-color: #b20e4d;
     border: 1px solid var(--app-red);
     transition: all 0.1s ease-in-out;
 }
@@ -82,5 +82,14 @@ h {
     font-size: 25px;
     font-weight: 600;
     color: #f2f4f6;
+}
 
+p {
+    color: #f2f4f6;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+p+p {
+    margin-top: 10px;
 }
